@@ -1,7 +1,7 @@
 import './style.less'
 import './icons.less'
 
-const container = document.querySelector('#container')
+const grid = document.querySelector('#grid')
 
 const modules = import.meta.glob('./svg/*.svg', {
   as: 'raw',
@@ -12,6 +12,6 @@ for (const svg in modules) {
   if (Object.hasOwnProperty.call(modules, svg)) {
     const element = modules[svg];
     
-    container.innerHTML += element
+    grid.innerHTML += element
   }
 }
