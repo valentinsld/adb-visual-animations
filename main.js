@@ -1,6 +1,7 @@
 import './style.less'
 import './icons.less'
 
+const container = document.querySelector('#container')
 const grid = document.querySelector('#grid')
 
 const modules = import.meta.glob('./svg/*.svg', {
@@ -15,3 +16,14 @@ for (const svg in modules) {
     grid.innerHTML += element
   }
 }
+
+//
+// animations
+//
+const CLASS_ANIMATION = "launch-animation"
+setInterval(() => {
+  container.classList.remove(CLASS_ANIMATION)
+  setTimeout(() => {
+    container.classList.add(CLASS_ANIMATION)
+  }, 100)
+}, 1000)
