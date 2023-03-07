@@ -1,0 +1,698 @@
+/*      Charpentier
+*************************/
+
+#charpentier {
+  * {
+    stroke-width: 0 !important;
+  }
+}
+
+#charpentier .animated {
+  &:first-child {
+    display: none !important;
+  }
+}
+
+div>#charpentier .animated {
+  animation: charpentier-scie 800ms ease;
+  // .delayedLoop(10);
+}
+
+div:hover>#charpentier .animated {
+  transform-origin: 50% 300%;
+  opacity: 0;
+
+  .delayedLoop(12);
+}
+
+
+
+.delayedLoop(@n, @i: 0) when (@i =< @n) {
+
+  &.line-@{i},
+  &.line-@{i} {
+
+    animation: charpentier 500ms ease forwards;
+    animation-delay: @i*30ms;
+  }
+
+  .delayedLoop(@n, (@i + 1));
+}
+
+@keyframes charpentier {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, -10px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0px, 0);
+  }
+}
+
+
+/*      Chef
+  ***************************/
+
+div:hover>#chef #building {
+  animation: chef-building 2000ms ease-in-out forwards;
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  stroke: white;
+}
+
+@keyframes chef-building {
+  to {
+    stroke-dashoffset: 0;
+    stroke: white;
+  }
+}
+
+div:hover>#chef #glass1,
+div:hover>#chef #glass2,
+div:hover>#chef #glass3,
+div:hover>#chef #glass4,
+div:hover>#chef #glass5 {
+  animation: chef-glass 500ms ease;
+  transform: scale(1, 1);
+  opacity: 1;
+  transform-origin: 40% 40%;
+}
+
+div:hover>#chef #glass5 {
+  animation: chef-glass 500ms ease;
+}
+
+div:hover>#chef #glass2 {
+  animation: chef-glass 750ms ease
+}
+
+div:hover>#chef #glass3 {
+  animation: chef-glass 1000ms ease;
+  transform-origin: 40% 45%;
+
+}
+
+div:hover>#chef #glass1 {
+  transform-origin: 45% 45%;
+  animation: chef-glass 1250ms ease;
+}
+
+div:hover>#chef #glass4 {
+  transform-origin: 40% 50%;
+  animation: chef-glass 1500ms ease;
+}
+
+@keyframes chef-glass {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(0.75, 0.75);
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+
+
+/*      Electricien
+  ***************************/
+div:hover>#electricien #Tracé_923 {
+  transform-origin: 157% 433%;
+  animation: eclair 500ms ease;
+}
+
+@keyframes eclair {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  33% {
+    transform: translate(0, -2%) rotate(18deg);
+  }
+
+  66% {
+    transform: translate(0, -2%) rotate(-18deg);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+/*      Gestionnaire
+  **************************/
+
+div:hover>#gestionnaire #folder {
+  animation: gestionnaire-folder 900ms ease-in forwards;
+  transform: translate(-2px, 3px);
+  stroke-dasharray: 63 20;
+  stroke-dashoffset: 40;
+}
+
+#folder {
+  stroke-width: 1.25px;
+}
+
+@keyframes gestionnaire-folder {
+  0% {
+    transform: translate(-2.2px, 3px);
+  }
+
+  25% {
+    stroke-dashoffset: 40;
+  }
+
+  50% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    transform: translate(0px, 0px);
+  }
+}
+
+
+/*      Plombier
+  **************************/
+div:hover>#plombier #Tracé_823 {
+  transform-origin: 200% 300%;
+  animation: plombier-key 500ms ease;
+}
+
+div:hover>#plombier #Tracé_974 {
+  transform-origin: 175% 300%;
+  animation: plombier-tuyaux 500ms cubic-bezier(0.25, 0.1, 0.56, 1.24) 300ms;
+}
+
+@keyframes plombier-key {
+  0% {
+    transform: rotate(0);
+  }
+
+  33% {
+    transform: rotate(15deg);
+  }
+
+  66% {
+    transform: rotate(-11deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes plombier-tuyaux {
+  0% {
+    transform: rotate(0);
+  }
+
+  33% {
+    transform: rotate(10deg);
+  }
+
+  66% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+/*      Macon
+  *******************/
+div:hover>#macon #Tracé_899 {
+  transform-origin: 650% 300%;
+  animation: macon-truelle 1000ms ease;
+}
+
+div:hover>#macon #SVGID_2_ {
+  transform-origin: 650% 300%;
+  animation: macon-truelle 1000ms ease;
+}
+
+@keyframes macon-truelle {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: translate(-2%, 5%) rotate(10deg);
+  }
+
+  50% {
+    transform: translate(6%, 5%) rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+/*      Chauffagiste
+  ***************************/
+div:hover>#chauffagiste #p1,
+div:hover>#chauffagiste #p2,
+div:hover>#chauffagiste #p3 {
+  animation: chauffagiste 300ms ease;
+}
+
+div:hover>#chauffagiste #p2 {
+  animation-delay: 150ms;
+}
+
+div:hover>#chauffagiste #p3 {
+  animation-delay: 300ms;
+}
+
+@keyframes chauffagiste {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, -4%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/*      Menuisier
+  *************************/
+div:hover>#menuisiser #calque1,
+div:hover>#menuisiser #a {
+  transform-origin: 430% 425%;
+  animation: menuisier-outil 500ms ease;
+}
+
+div:hover>#menuisiser #calque2 {
+  transform-origin: 430% 425%;
+  animation: menuisier-bois 500ms ease;
+}
+
+@keyframes menuisier-outil {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate(-1%, 3%) rotate(5deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes menuisier-bois {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate(1%, 3%) rotate(-15deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+/*       Couvreur
+  **************************/
+div:hover>#couvreur #Groupe_471-1,
+div:hover>#couvreur #SVGID_2_m {
+  animation: couvreur 1000ms ease forwards;
+}
+
+@keyframes couvreur {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translate(-2%, 13.5%);
+    opacity: 1;
+    display: block;
+  }
+
+  40.1% {
+    transform: translate(-2%, 13.5%);
+    opacity: 0;
+    display: none;
+  }
+
+  50% {
+    transform: translate(-4%, -3%);
+    opacity: 0;
+    display: block;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/*       carreleur
+  **************************/
+div:hover>#carreleur #carr,
+div:hover>#carreleur #SVGID_2_cc {
+  animation: carreleur 1000ms ease forwards;
+}
+
+@keyframes carreleur {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translate(0, 3%);
+    opacity: 1;
+    display: initial;
+  }
+
+  40.1% {
+    transform: translate(0, 3%);
+    opacity: 0;
+    display: none;
+  }
+
+  49.9% {
+    display: none;
+    transform: translate(0, -6%);
+  }
+
+  50% {
+    opacity: 0;
+    display: initial;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/*      Peintre
+  **************************/
+div:hover>#peintre #Groupe_443,
+div:hover>#peintre #SVGID_2_p {
+  transform-origin: 438% 323%;
+  animation: peintre 1000ms ease;
+}
+
+@keyframes peintre {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  25% {
+    transform: translate(3%, 1%) rotate(-8deg);
+  }
+
+  65% {
+    transform: translate(2%, -7%) rotate(-2deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+/*      Platrier
+  **************************/
+div:hover>#platrier #Tracé_681,
+div:hover>#platrier #SVGID_2_pl {
+  transform-origin: 90% -23%;
+  animation: peintre 1000ms ease;
+}
+
+@keyframes peintre {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  25% {
+    transform: translate(2%, 4%) rotate(6deg);
+  }
+
+  65% {
+    transform: translate(1%, -7%) rotate(2deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+/*      Serrurier
+  // **************************/
+// div:hover>.serrurier-icon .Groupe_450 {
+//   background-color: blue;
+//   transform-origin: 530.5% 313%;
+//   animation: serrurier-ecrou 400ms ease forwards;
+// }
+// div:hover>.serrurier-icon .Tracé_887 {
+//   transform-origin: 553% 310%;
+//   animation: serrurier-marteau 500ms ease forwards;
+// }
+// @keyframes serrurier-ecrou {
+//   to {
+//     transform: rotate(45deg);
+//   }
+// }
+// @keyframes serrurier-marteau {
+//   0% {
+//     transform: translate(0, 0) rotate(0);
+//   }
+//   50% {
+//     transform: rotate(10deg);
+//   }
+//   70% {
+//     transform: rotate(-8deg);
+//   }
+//   100% {
+//     transform: translate(0, 0) rotate(0);
+//   }
+// }
+
+/*      Serrurier
+**************************/
+.serrurierbis .hammer {
+  transform-origin: -104% 535%;
+
+}
+
+#serrurierbis .sparkles g {
+  transform-origin: -143% 535%;
+}
+
+#serrurierbis .bottom {
+  transform-origin: -133% 545%;
+}
+
+div:hover>.serrurierbis .bottom {
+  animation: serrurierBottom 500ms cubic-bezier(0.25, 0.1, 0.56, 1.24) 300ms;
+
+}
+
+div:hover>.serrurierbis .hammer {
+  animation: serrurierHammer 500ms cubic-bezier(0.25, 0.1, 0.56, 1.24) 300ms;
+
+}
+
+div:hover>.serrurierbis .sparkles g {
+  transition: all 0.2s;
+}
+
+div:hover>.serrurierbis .sparkles g {
+  animation: serrurierSparkles 500ms cubic-bezier(0.25, 0.1, 0.56, 1.24) 300ms;
+
+}
+
+@keyframes serrurierHammer {
+  0% {
+    transform: rotate(0);
+  }
+
+  33% {
+    transform: rotate(10deg);
+  }
+
+  66% {
+    transform: rotate(-2deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes serrurierSparkles {
+  0% {
+    transform: scale(1);
+  }
+
+  33% {
+    transform: scale(1.2);
+  }
+
+  66% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes serrurierBottom {
+  0% {
+    transform: rotate(0);
+  }
+
+  33% {
+    transform: rotate(0);
+  }
+
+  66% {
+    transform: rotate(-5deg);
+  }
+
+  80% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+/*       Tailler
+  **************************/
+div:hover>#tailler #Groupe_896 {
+  transform-origin: 227% 6%;
+  animation: tailler-pioche 500ms ease;
+}
+
+div:hover>#tailler #Groupe_281 {
+  transform-origin: 10% 10%;
+  animation: tailler-pierre 500ms cubic-bezier(0.25, 0.1, 0.56, 1.24) 300ms;
+}
+
+@keyframes tailler-pioche {
+  0% {
+    transform: rotate(0);
+  }
+
+  33% {
+    transform: rotate(10deg);
+  }
+
+  66% {
+    transform: rotate(-25deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes tailler-pierre {
+  0% {
+    transform: rotate(0);
+  }
+
+  33% {
+    transform: rotate(10deg);
+  }
+
+  66% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+
+#tailler:hover #Groupe_281 {
+  transform-origin: 10% 10%;
+  animation: tailler-pierre 500ms cubic-bezier(0.25, 0.1, 0.56, 1.24) 300ms;
+}
+
+
+/********* Tailleur **********/
+
+div>#tailleur1 .chisel {
+  /* transform: translate(10px, -10px) !important; */
+}
+
+#tailleur1 {
+  .st1 {
+    stroke: transparent !important;
+  }
+}
+
+div:hover>#tailleur1 .chisel {
+  animation: chisel 500ms cubic-bezier(0.25, 0.1, 0.56, 1.24) 300ms;
+}
+
+div:hover>#tailleur1 .stone {
+  transform-origin: -140% 150%;
+  animation: stone 500ms cubic-bezier(0.25, 0.1, 0.56, 1.24) 300ms;
+}
+
+@keyframes chisel {
+  0% {
+    transform: translate(0px, 0px)
+  }
+
+  33% {
+    transform: translate(5px, -5px)
+  }
+
+  66% {
+    transform: translate(-2.5px, 2.5px)
+  }
+
+  100% {
+    transform: translate(0px, 0px)
+  }
+}
+
+@keyframes stone {
+  0% {
+    transform: rotate(0)
+  }
+
+  33% {
+    transform: rotate(0)
+  }
+
+  66% {
+    transform: rotate(-5deg)
+  }
+
+  100% {
+    transform: rotate(0)
+  }
+}
